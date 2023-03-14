@@ -11,7 +11,7 @@ class User < ApplicationRecord
     self.email = self.email.downcase.strip
   end
 
-  # methods the work on classes need to reference self
+  # methods that work on classes need to reference self
   def self.authenticate_with_credentials(email, password)
     clean_email = email.strip.downcase
     user = User.find_by_email(clean_email)
@@ -21,4 +21,6 @@ class User < ApplicationRecord
       nil
     end
   end
+
+
 end
